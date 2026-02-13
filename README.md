@@ -15,7 +15,6 @@ It is designed for fast access, simple booking flow, and real-time seat updates.
 
 ![PLACE EVENT QR IMAGE HERE](qr-image.png)
 
-> Replace `qr-image.png` with your actual QR code image file.
 
 ---
 
