@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="ember.ico" type="image/x-icon">
+    <title>11th Hour Open Mic – Valentine's Eve Special</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <div class="card fade-in">
+
+            <div class="corner-accent top-left"></div>
+            <div class="corner-accent top-right"></div>
+            <div class="corner-accent bottom-left"></div>
+            <div class="corner-accent bottom-right"></div>
+
+            <div class="card-header">
+                <h1>11TH HOUR<br><span class="title-emphasis">OPEN MIC</span></h1>
+                <div class="divider"></div>
+                <div class="tag">Valentine's Eve Special</div>
+            </div>
+
+            <div class="seat-panel">
+                <div class="seat-label">Seats Available</div>
+                <div id="seatsLeft" class="seat-number">--</div>
+                <div class="seat-sublabel">Reserve yours now</div>
+                <div id="urgencyMessage" class="urgency-message hidden">
+                    Hurry! Few seats left
+                </div>
+                <div id="soldOutMessage" class="sold-out-message hidden">
+                    <div class="sold-out-title">SOLD OUT!</div>
+                    <div class="sold-out-subtitle">Still wanna join? You can purchase a ticket at the venue<br><span
+                            class="extra-charges">(extra charges applied)</span></div>
+                </div>
+            </div>
+
+            <p class="msg">
+                Poetry, music, stories, and warm café vibes await.
+                Reserve your seat and be part of the evening.
+            </p>
+
+            <button onclick="bookSeat()" class="btn primary">
+                <span class="btn-icon">💬</span>
+                <span>Book Seat on WhatsApp</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBHXo2GVbAe46g197rUalgqNtfAmW_xCm0",
+            authDomain: "th-hour-open-mic.firebaseapp.com",
+            projectId: "th-hour-open-mic",
+            storageBucket: "th-hour-open-mic.firebasestorage.app",
+            messagingSenderId: "1037183471839",
+            appId: "1:1037183471839:web:c6d01d29e30f57283fd96a"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        window.db = getFirestore(app);
+        window.auth = getAuth(app);
+        window.fb = { doc, getDoc, setDoc, onSnapshot };
+        window.fbAuth = { signInWithEmailAndPassword, signOut, onAuthStateChanged };
+    </script>
+
+    <script type="module" src="app.js"></script>
+
+
+</body>
+
+</html>
