@@ -13,7 +13,7 @@ It is designed for fast access, simple booking flow, and real-time seat updates.
 
 ## 📷 Scan to Open Seat Status Page
 
-![PLACE EVENT QR IMAGE HERE](qr-image.png)
+<img src="qr-image.png" width="180" alt="Event QR Code">
 
 
 ---
